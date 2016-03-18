@@ -131,7 +131,8 @@ public class MlcpBean implements Runnable {
         BeanWrapper bw = new BeanWrapperImpl(this);
         for (PropertyDescriptor pd : bw.getPropertyDescriptors()) {
             String name = pd.getName();
-            if (pd.getReadMethod() != null && pd.getWriteMethod() != null && !"command".equals(name)) {
+            if (pd.getReadMethod() != null && pd.getWriteMethod() != null && !"command".equals(name)
+                    && !"additionalOptions".equals(name)) {
                 Object value = bw.getPropertyValue(name);
                 if (value != null && value.toString().trim().length() > 0) {
                     l.add("-" + name);
