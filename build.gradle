@@ -11,7 +11,7 @@ targetCompatibility = "1.7"
 
 repositories {
   jcenter()
-  
+
   // Needed for mlcp and its Hadoop dependencies
   maven {url "http://developer.marklogic.com/maven2/"}
   maven {url "http://repository.cloudera.com/artifactory/cloudera-repos/" }
@@ -19,13 +19,16 @@ repositories {
 
 dependencies {
   compile 'org.springframework:spring-beans:4.2.5.RELEASE'
-  
-  compile ("com.marklogic:mlcp-Hadoop2:1.3-2") { exclude module:"hadoop-deps" }
-  compile "com.marklogic:hadoop-deps:2"
+  compile('com.marklogic:mlcp:8.0-5') {
+    exclude module : 'servlet-api'
+    exclude group: 'com.google.guava', module: 'guava'
+  }
+  compile 'com.google.guava:guava:19.0'
+
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-  classifier 'sources' 
+  classifier 'sources'
   from sourceSets.main.allJava
 }
 
@@ -42,7 +45,7 @@ publishing {
     }
   }
 }
- 
+
 if (project.hasProperty("myBintrayUser")) {
   bintray {
     user = myBintrayUser
