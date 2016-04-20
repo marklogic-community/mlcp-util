@@ -19,11 +19,7 @@ repositories {
 
 dependencies {
   compile 'org.springframework:spring-beans:4.2.5.RELEASE'
-  compile('com.marklogic:mlcp:8.0-5') {
-    exclude module : 'servlet-api'
-    exclude group: 'com.google.guava', module: 'guava'
-  }
-  compile 'com.google.guava:guava:19.0'
+  compile('com.marklogic:mlcp:8.0-5')
 
 }
 
