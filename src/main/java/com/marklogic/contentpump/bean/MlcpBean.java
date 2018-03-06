@@ -44,10 +44,14 @@ public class MlcpBean {
 	private Boolean compress;
 	private String conf;
 	private String content_encoding;
+
+	// TODO these should all be booleans
 	private String copy_collections;
+	private String copy_metadata;
 	private String copy_permissions;
 	private String copy_properties;
 	private String copy_quality;
+
 	private String data_type;
 	private String delimiter;
 	private String delimited_root_name;
@@ -64,9 +68,12 @@ public class MlcpBean {
 	private String input_file_path;
 	private String input_file_pattern;
 	private String input_file_type;
+	private Boolean input_ssl;
 	private Integer max_split_size;
 	private Integer min_split_size;
 	private String mode;
+	private String modules;
+	private String modules_root;
 	private String namespace;
 	private String options_file;
 	private Boolean output_cleandir;
@@ -79,17 +86,23 @@ public class MlcpBean {
 	private String output_partition;
 	private String output_permissions;
 	private String output_quality;
+	private Boolean output_ssl;
 	private String output_type;
 	private String output_uri_prefix;
 	private String output_uri_replace;
 	private String output_uri_suffix;
 	private String path_namespace;
 	private String query_filter;
+	private String redaction;
+	private Boolean restrict_hosts;
+	private Boolean restrict_input_hosts;
+	private Boolean restrict_output_hosts;
 	private String sequencefile_key_class;
 	private String sequencefile_value_class;
 	private String sequencefile_value_type;
 	private Boolean snapshot;
 	private Boolean split_input;
+	private Boolean ssl;
 	private Boolean streaming;
 	private String temporal_collection;
 	private Integer thread_count;
@@ -831,4 +844,84 @@ public class MlcpBean {
 		this.additionalOptions = additionalOptions;
 	}
 
+
+	public String getCopy_metadata() {
+		return copy_metadata;
+	}
+
+	public void setCopy_metadata(String copy_metadata) {
+		this.copy_metadata = copy_metadata;
+	}
+
+	public Boolean getInput_ssl() {
+		return input_ssl;
+	}
+
+	public void setInput_ssl(Boolean input_ssl) {
+		this.input_ssl = input_ssl;
+	}
+
+	public Boolean getOutput_ssl() {
+		return output_ssl;
+	}
+
+	public void setOutput_ssl(Boolean output_ssl) {
+		this.output_ssl = output_ssl;
+	}
+
+	public String getRedaction() {
+		return redaction;
+	}
+
+	public void setRedaction(String redaction) {
+		this.redaction = redaction;
+	}
+
+	public Boolean getRestrict_hosts() {
+		return restrict_hosts;
+	}
+
+	public void setRestrict_hosts(Boolean restrict_hosts) {
+		this.restrict_hosts = restrict_hosts;
+	}
+
+	public Boolean getRestrict_input_hosts() {
+		return restrict_input_hosts;
+	}
+
+	public void setRestrict_input_hosts(Boolean restrict_input_hosts) {
+		this.restrict_input_hosts = restrict_input_hosts;
+	}
+
+	public Boolean getRestrict_output_hosts() {
+		return restrict_output_hosts;
+	}
+
+	public void setRestrict_output_hosts(Boolean restrict_output_hosts) {
+		this.restrict_output_hosts = restrict_output_hosts;
+	}
+
+	public Boolean getSsl() {
+		return ssl;
+	}
+
+	public void setSsl(Boolean ssl) {
+		this.ssl = ssl;
+	}
+
+	public String getModules() {
+		return modules;
+	}
+
+	public void setModules(String modules) {
+		this.modules = modules;
+	}
+
+	public String getModules_root() {
+		return modules_root;
+	}
+
+	public void setModules_root(String modules_root) {
+		this.modules_root = modules_root;
+	}
 }
