@@ -117,6 +117,13 @@ public class MlcpBean {
 	private String uri_id;
 	private String xml_repair_level;
 
+	private String ssl;
+	private String input_ssl;
+	private String output_ssl;
+
+	private String modules;
+	private String modules_root;
+
 	// Just in case, e.g. for when mlcp is upgraded and this library doesn't yet match it
 	private Map<String, String> additionalOptions = new HashMap<>();
 
@@ -386,6 +393,46 @@ public class MlcpBean {
 
 	public void setXml_repair_level(String xml_repair_level) {
 		this.xml_repair_level = xml_repair_level;
+	}
+
+	public String getModules() {
+		return modules;
+	}
+
+	public void setModules(String modules) {
+		this.modules = modules;
+	}
+
+	public String getModules_root() {
+		return modules_root;
+	}
+
+	public void setModules_root(String modules_root) {
+		this.modules_root = modules_root;
+	}
+
+	public String getSsl() {
+		return ssl;
+	}
+
+	public void setSsl(String ssl) {
+		this.ssl = ssl;
+	}
+
+	public String getInput_ssl() {
+		return input_ssl;
+	}
+
+	public void setInput_ssl(String input_ssl) {
+		this.input_ssl = input_ssl;
+	}
+
+	public String getOutput_ssl() {
+		return output_ssl;
+	}
+
+	public void setOutput_ssl(String output_ssl) {
+		this.output_ssl = output_ssl;
 	}
 
 	public String getAggregate_record_element() {
