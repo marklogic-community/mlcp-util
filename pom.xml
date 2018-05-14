@@ -36,7 +36,7 @@
 			<name>MarkLogic Github Contributors</name>
 			<email>general@developer.marklogic.com</email>
 			<organization>Github Contributors</organization>
-			<organizationUrl>https://github.com/marklogic/mlcp-util/graphs/contributors</organizationUrl>
+			<organizationUrl>https://github.com/marklogic-community/mlcp-util/graphs/contributors</organizationUrl>
 		</developer>
 	</developers>
 
