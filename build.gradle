@@ -1,66 +1,74 @@
 buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath "com.smokejumperit.gradle.license:Gradle-License-Report:0.0.2"
-  }
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath "com.smokejumperit.gradle.license:Gradle-License-Report:0.0.2"
+	}
 }
 
 plugins {
-  id "java"
-  id "maven-publish"
-  id "eclipse"
-  id "idea"
-  id "com.jfrog.bintray" version "1.6"
+	id "java"
+	id "maven-publish"
+	id "eclipse"
+	id "idea"
+	id "com.jfrog.bintray" version "1.6"
 }
 
-apply plugin:'license-report'
+apply plugin: 'license-report'
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
 
 repositories {
-  jcenter()
+	jcenter()
 }
 
 dependencies {
-  compile 'org.springframework:spring-beans:4.2.5.RELEASE'
+	compile 'org.springframework:spring-beans:4.2.5.RELEASE'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-  classifier 'sources'
-  from sourceSets.main.allJava
+	classifier 'sources'
+	from sourceSets.main.allJava
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+	classifier "javadoc"
+	from file(javadocsDir + "/" + project.name)
 }
 
 javadoc.destinationDir = file(javadocsDir + "/" + project.name)
 
 publishing {
-  publications {
-    mainJava(MavenPublication) {
-      from components.java
-    }
-    sourcesJava(MavenPublication) {
-      from components.java
-      artifact sourcesJar
-    }
-  }
+	publications {
+		mainJava(MavenPublication) {
+			from components.java
+		}
+		sourcesJava(MavenPublication) {
+			from components.java
+			artifact sourcesJar
+		}
+		mavenJavadoc(MavenPublication) {
+			artifact javadocJar
+		}
+	}
 }
 
 if (project.hasProperty("myBintrayUser")) {
-  bintray {
-    user = myBintrayUser
-    key = myBintrayKey
-    publications = ['mainJava', 'sourcesJava']
-    pkg {
-      repo = 'maven'
-      name = project.name
-      licenses = ['Apache-2.0']
-      vcsUrl = 'https://github.com/rjrudin/' + project.name + '.git'
-      version {
-        name = project.version
-        released = new Date()
-      }
-    }
-  }
+	bintray {
+		user = myBintrayUser
+		key = myBintrayKey
+		publications = ['mainJava', 'sourcesJava', 'mavenJavadoc']
+		pkg {
+			repo = 'maven'
+			name = project.name
+			licenses = ['Apache-2.0']
+			vcsUrl = 'https://github.com/rjrudin/' + project.name + '.git'
+			version {
+				name = project.version
+				released = new Date()
+			}
+		}
+	}
 }

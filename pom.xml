@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.marklogic</groupId>
+	<artifactId>mlcp-util</artifactId>
+	<version>0.9.0</version>
+	<packaging>jar</packaging>
+
+	<name>mlcp-util</name>
+	<description>Utility classes for MarkLogic Content Pump</description>
+	<url>https://github.com/marklogic-community/mlcp-util</url>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/marklogic-community/mlcp-util.git</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<name>MarkLogic</name>
+			<email>java-sig@marklogic.com</email>
+			<organization>MarkLogic</organization>
+			<organizationUrl>https://www.marklogic.com</organizationUrl>
+		</developer>
+		<developer>
+			<name>MarkLogic Github Contributors</name>
+			<email>general@developer.marklogic.com</email>
+			<organization>Github Contributors</organization>
+			<organizationUrl>https://github.com/marklogic/mlcp-util/graphs/contributors</organizationUrl>
+		</developer>
+	</developers>
+
+	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>4.2.5.RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>
