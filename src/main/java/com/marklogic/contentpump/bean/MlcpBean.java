@@ -124,7 +124,7 @@ public class MlcpBean {
 	 * Uses Spring's BeanWrapper to build up a list of arguments that can be fed into mlcp's
 	 * OptionsFileUtil.expandArguments method.
 	 *
-	 * @return
+	 * @return array of arguments
 	 */
 	public String[] buildArgs() {
 		List<String> l = new ArrayList<String>();
@@ -158,7 +158,8 @@ public class MlcpBean {
 	/**
 	 * Returns a string of all the args, excluding the password - useful for passing into a log method.
 	 *
-	 * @param args
+	 * @param args the arguments to be fed to MLCP
+	 * @return string representation of the args, minus the password
 	 */
 	public String viewArgs(String[] args) {
 		List<String> argList = new ArrayList<String>();
