@@ -7,19 +7,20 @@ plugins {
 }
 
 group = "com.marklogic"
-version = "1.0"
+version = "1.0.1"
 
-sourceCompatibility = "8"
-targetCompatibility = "8"
+java {
+	sourceCompatibility = "8"
+	targetCompatibility = "8"
+}
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework:spring-beans:5.3.7'
-
-	testImplementation "org.junit.jupiter:junit-jupiter:5.7.1"
+	implementation 'org.springframework:spring-beans:5.3.22'
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
 }
 
 test {
