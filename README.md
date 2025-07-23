@@ -1,3 +1,10 @@
+# Archived repository
+
+This repository has been archived. All classes have been migrated to the
+[ml-javaclient-util subproject in the ml-gradle repository](https://github.com/marklogic/ml-gradle/tree/master/ml-javaclient-util).
+The classes will be available in the upcoming ml-gradle 6.0.0 release.
+
+
 This library provides a bean-like interface for mlcp. It doesn't depend on mlcp - it just collects arguments
 and then returns them as a list, which you can then feed into mlcp.
 
